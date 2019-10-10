@@ -11,6 +11,11 @@ class CategoryTableSeeder extends Seeder
      */
     public function run()
     {
+        // Borra los datos de la tabla
+        DB::table('category')->delete();
+        // Truncate
+        #DB::table('category')->truncate();
+        // LLenar los datos
         DB::table('category')->insert([
             
             [
@@ -20,6 +25,18 @@ class CategoryTableSeeder extends Seeder
             [
                 'name' => 'Politica',
                 'slug' => str_slug('Politica'),
+            ],
+            [
+                'name' => 'Tecnologia',
+                'slug' => str_slug('Tecnologia'),
+            ],
+            [
+                'name' => 'Gestion de TI',
+                'slug' => str_slug('Gestion de TI'),
+            ],
+            [
+                'name' => 'Sistemas e Informatica',
+                'slug' => str_slug('Sistemas e Informatica'),
             ]
             
         ]);
