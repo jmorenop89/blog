@@ -9,7 +9,13 @@ class HomeController extends Controller
 {
     public function index(){
         $categories = DB::table('category')->get();
-        #dd($categories);
+        $categories = DB::table('category')
+            ->select('id','name','slug')
+            ->get();
+        $categories = DB::table('category')
+            ->where('name','like','%e%')
+            ->get();
+        dd($categories);
         return view('index',compact('categories'));
     }
 
