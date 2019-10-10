@@ -22,8 +22,11 @@ class HomeController extends Controller
 
     public function about(){
         $categories = Category::all();
-        dd($categories);
-        return view('about');
+        $categories = Category::all('id','name','slug');
+        $categories = Category::where('name','like','%e%')
+            ->get();
+        #dd($categories);
+        return view('about',compact('categories'));
     }
 
     public function contact(){

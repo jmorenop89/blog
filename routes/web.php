@@ -19,6 +19,11 @@ Route::get('/',['as'=>'index','uses'=>'HomeController@index']);
 Route::get('/page/about',['as'=>'about','uses'=>'HomeController@about']);
 Route::get('/contact',['as'=>'contact','uses'=>'HomeController@contact']);
 
+// crear un grupo de rutas
+Route::group(['prefix'=>'category'],function(){
+    Route::get('/',['as'=>'category.index','uses'=>'CategoryController@index']);
+    Route::get('create',['as'=>'category.create','uses'=>'CategoryController@create']);
+});
 
 
 # pasando variable por ruta 
