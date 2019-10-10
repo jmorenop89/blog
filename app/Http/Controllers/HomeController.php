@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,11 +16,13 @@ class HomeController extends Controller
         $categories = DB::table('category')
             ->where('name','like','%e%')
             ->get();
-        dd($categories);
+        #dd($categories);
         return view('index',compact('categories'));
     }
 
     public function about(){
+        $categories = Category::all();
+        dd($categories);
         return view('about');
     }
 
