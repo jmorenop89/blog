@@ -6,7 +6,8 @@
 
 @section('content')
     <br><br>
-    <form action="" method="post">
+    <form action="{{ route('category.store') }}" method="post">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         Nombre 
         <input type="text" name="name" id=""><br>
         <input type="submit" value="Agregar">

@@ -23,6 +23,7 @@ Route::get('/contact',['as'=>'contact','uses'=>'HomeController@contact']);
 Route::group(['prefix'=>'category'],function(){
     Route::get('/',['as'=>'category.index','uses'=>'CategoryController@index']);
     Route::get('create',['as'=>'category.create','uses'=>'CategoryController@create']);
+    Route::post('create',['as'=>'category.store','uses'=>'CategoryController@store']);
 });
 
 

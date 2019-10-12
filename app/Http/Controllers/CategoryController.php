@@ -16,6 +16,14 @@ class CategoryController extends Controller
         return view('category.create');
     }
 
+    public function store(Request $request){
+        $data = $request->all();
+        $data['slug'] = str_slug($data['name']);
+        $model = Category::create($data);
+        #dd($model);
+        return redirect()->route('category.index');
+    }
+
     public function edit(){
         return view('category.edit');
     }
