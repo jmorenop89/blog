@@ -26,11 +26,17 @@ Route::group(['prefix'=>'category'],function(){
     Route::post('create',['as'=>'category.store','uses'=>'CategoryController@store']);
     Route::get('edit/{id}',['as'=>'category.edit','uses'=>'CategoryController@edit']);
     Route::post('edit/{id}',['as'=>'category.update','uses'=>'CategoryController@update']);
-    Route::get('delete/{id}',
-        ['as'=>'category.delete',
-        'uses'=>'CategoryController@delete']);
+    Route::get('delete/{id}',['as'=>'category.delete','uses'=>'CategoryController@delete']);
 });
 
+Route::group(['prefix'=>'post'],function(){
+    Route::get('/',['as'=>'post.index','uses'=>'PostController@index']);
+    Route::get('create',['as'=>'post.create','uses'=>'PostController@create']);
+    Route::post('create',['as'=>'post.store','uses'=>'PostController@store']);
+    Route::get('edit/{id}',['as'=>'post.edit','uses'=>'PostController@edit']);
+    Route::post('edit/{id}',['as'=>'post.update','uses'=>'PostController@update']);
+    Route::get('delete/{id}',['as'=>'post.delete','uses'=>'PostController@delete']);
+});
 
 # pasando variable por ruta 
 #Route::get('/cliente/{id?}', function ($id=null) {
