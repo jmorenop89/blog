@@ -24,6 +24,11 @@ Route::group(['prefix'=>'category'],function(){
     Route::get('/',['as'=>'category.index','uses'=>'CategoryController@index']);
     Route::get('create',['as'=>'category.create','uses'=>'CategoryController@create']);
     Route::post('create',['as'=>'category.store','uses'=>'CategoryController@store']);
+    Route::get('edit/{id}',['as'=>'category.edit','uses'=>'CategoryController@edit']);
+    Route::post('edit/{id}',['as'=>'category.update','uses'=>'CategoryController@update']);
+    Route::get('delete/{id}',
+        ['as'=>'category.delete',
+        'uses'=>'CategoryController@delete']);
 });
 
 

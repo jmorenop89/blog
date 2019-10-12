@@ -24,7 +24,26 @@ class CategoryController extends Controller
         return redirect()->route('category.index');
     }
 
-    public function edit(){
-        return view('category.edit');
+    public function edit($id){
+        $model = Category::findOrFail($id);
+        return view('category.edit',compact('model'));
+    }
+
+    public function update(Request $request,$id){
+        $model = Category::findOrFail($id);
+        $data = $request->all();
+        $data['slug'] = str_slug($data['name']);
+        $model->update($data);
+        /* Otro modo de como actualizar lo datos */
+        #$model->fill($data);
+        #$model->save();
+        /* */
+        return redirect()->route('category.index');
+    }
+
+    public function delete($id){
+        $model = Category::find($id);
+        $model->delete();
+        return redirect()->route('category.index');
     }
 }

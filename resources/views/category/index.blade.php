@@ -20,8 +20,8 @@
             <td>{{ $model->name }}</td>
             <td>{{ $model->slug }}</td>
             <td>
-                <a href="">Editar</a>
-                <a href="">Eliminar</a>
+                <a href="{{ route('category.edit',$model->id) }}">Editar</a>
+                <a href="{{ route('category.delete',$model->id) }}">Eliminar</a>
             </td>
         </tr>
         @endforeach
