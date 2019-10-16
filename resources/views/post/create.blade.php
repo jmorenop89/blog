@@ -11,13 +11,7 @@
         Titulo 
         <input type="text" name="title" id=""><br>
         Categoria
-        <select name="category_id" id="">
-            @foreach($categories as $category)
-            <option value="{{ $category->id}}">
-                {{ $category->name}}
-            </option>
-            @endforeach
-        </select><br>
+        {{ Form::select('category_id',$categories) }}
         Resumen<br>
         <textarea name="brief" cols="30" rows="10"></textarea><br>
         Contenido<br>

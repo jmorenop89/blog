@@ -14,7 +14,8 @@ class PostController extends Controller
     }
 
     public function create(){
-        $categories = Category::all();
+        $categories = Category::all()->pluck('name','id');
+        #dd($categories);
         return view('post.create',compact('categories'));
     }
 

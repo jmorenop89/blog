@@ -6,12 +6,10 @@
 
 @section('content')
     <br><br>
-    <form action="{{ route('category.update',$model->id) }}" method="post">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        Nombre 
-        <input type="text" name="name" 
-            value="{{ $model->name}}"><br>
-        <input type="submit" value="Agregar">
-    </form>
+    {{ Form::model($model,['route'=>['category.update',$model->id], 
+        'method'=>'post'])}}
+        @include('category.fields')
+        {{ Form::submit('Actualizar') }}
+    {{ Form::close() }}
     <br><br>
 @endsection

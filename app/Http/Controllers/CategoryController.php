@@ -29,6 +29,7 @@ class CategoryController extends Controller
 
     public function edit($id){
         $model = Category::findOrFail($id);
+        #dd($model);
         return view('category.edit',compact('model'));
     }
 
