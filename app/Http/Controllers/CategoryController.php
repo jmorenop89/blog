@@ -8,7 +8,10 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     public function index(){
-        $models = Category::all();
+        // Metodo que retorna todos los registros
+        #$models = Category::all();
+        // Metodo para usar paginacion de datos
+        $models = Category::paginate(3);
         return view('category.index',compact('models'));
     }
 

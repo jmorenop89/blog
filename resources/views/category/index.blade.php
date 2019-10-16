@@ -9,7 +9,7 @@
     <a href="{{ route('category.create') }}">
         Agregar
     </a>
-    <table border="1">
+    <table border="1" width="100%">
         <tr>
             <th>Nombre</th>
             <th>slug</th>
@@ -26,5 +26,7 @@
         </tr>
         @endforeach
     </table>
+    <br>
+    {{ $models->render() }}
     <br><br>
 @endsection
