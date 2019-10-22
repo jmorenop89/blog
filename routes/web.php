@@ -15,12 +15,12 @@
 #Route::get('/page/about','HomeController@about')->name('about');
 #Route::get('/contact','HomeController@contact')->name('contact');
 
-Route::get('/',['as'=>'index','uses'=>'HomeController@index']);
+Route::get('/',['middleware'=>'myfilter','as'=>'index','uses'=>'HomeController@index']);
 Route::get('/page/about',['as'=>'about','uses'=>'HomeController@about']);
 Route::get('/contact',['as'=>'contact','uses'=>'HomeController@contact']);
 
 // crear un grupo de rutas
-Route::group(['prefix'=>'category'],function(){
+Route::group(['prefix'=>'category','middleware'=>'myfilter'],function(){
     Route::get('/',['as'=>'category.index','uses'=>'CategoryController@index']);
     Route::get('create',['as'=>'category.create','uses'=>'CategoryController@create']);
     Route::post('create',['as'=>'category.store','uses'=>'CategoryController@store']);
