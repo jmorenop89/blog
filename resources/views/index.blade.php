@@ -28,3 +28,7 @@
 
 </div>
 @endsection
+
+@section('script')
+{{ Html::script('assets/js/script.js') }}
+@endsection
