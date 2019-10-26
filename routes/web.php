@@ -15,7 +15,7 @@
 #Route::get('/page/about','HomeController@about')->name('about');
 #Route::get('/contact','HomeController@contact')->name('contact');
 
-Route::get('/',['middleware'=>'myfilter','as'=>'index','uses'=>'HomeController@index']);
+#Route::get('/',['middleware'=>'myfilter','as'=>'index','uses'=>'HomeController@index']);
 Route::get('/page/about',['as'=>'about','uses'=>'HomeController@about']);
 Route::get('/contact',['as'=>'contact','uses'=>'HomeController@contact']);
 
@@ -46,3 +46,9 @@ Route::group(['prefix'=>'post'],function(){
 #Route::get('/cliente/{id}/registro/{id_registro}', function ($id,$id_registro) {
 #    return "Ingreso el cliente de id : $id y de id registro : $id_registro";
 #});
+#Auth::routes();
+Route::get('/', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
