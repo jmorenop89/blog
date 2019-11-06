@@ -17,9 +17,9 @@
         <h1>BIENVENIDOS A LARAVEL</h1>
     </header>
     <nav>
-        <a href="{{ route('index') }}">Inicio</a>
-        <a href="{{ route('about') }}">Nosotros</a>
-        <a href="{{ route('contact') }}">Contacto</a>
+        <a href="">Inicio</a>
+        <a href="">Nosotros</a>
+        <a href="">Contacto</a>
     </nav>
     <div id="content" class="container">
         @yield('content')
