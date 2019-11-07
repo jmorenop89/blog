@@ -20,6 +20,9 @@ class CategoryController extends Controller
     }
 
     public function store(Request $request){
+        $request->validate([
+            'name' => 'required|digits:8'
+        ]);
         $data = $request->all();
         $data['slug'] = str_slug($data['name']);
         $model = Category::create($data);

@@ -6,9 +6,12 @@
 
 @section('content')
     <br><br>
-    {{ Form::open(['route'=>'category.store','method'=>'post']) }}
-        @include('category.fields')
-        {{ Form::submit('Agregar') }}
-    {{ Form::close() }}
+    <div class="col-6">
+        {{ Form::open(['route'=>'category.store','method'=>'post']) }}
+            @include('category.fields')
+            {{ Form::submit('Agregar') }}
+        {{ Form::close() }}
+    </div>
+    
     <br><br>
 @endsection
