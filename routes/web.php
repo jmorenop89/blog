@@ -23,7 +23,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // crear un grupo de rutas
-Route::group(['prefix'=>'category','middleware'=>'auth'],function(){
+Route::group(['prefix'=>'category'],function(){
     Route::get('/',['as'=>'category.index','uses'=>'CategoryController@index']);
     Route::get('create',['as'=>'category.create','uses'=>'CategoryController@create']);
     Route::post('create',['as'=>'category.store','uses'=>'CategoryController@store']);

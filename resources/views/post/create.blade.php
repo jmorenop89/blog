@@ -11,7 +11,7 @@
         Titulo 
         <input type="text" name="title" id=""><br>
         Categoria
-        {{ Form::select('category_id',$categories) }}
+        {{ Form::select('category_id',$categories,null,['class'=>'']) }}
         Resumen<br>
         <textarea name="brief" cols="30" rows="10"></textarea><br>
         Contenido<br>
